@@ -1,0 +1,106 @@
+     	 
+
+	TCP socket programming
+    ******************************
+ 	
+######python prog. when compile the this will not run on diff. kernel.--can't read but can be read by decompilation--faster
+#when interperate the os independent.
+
+
+#lw.py -- is compiled into 
+
+
+#import py_compile
+#py_compile.compile("lw.py")
+
+#lw.pyc
+
+#python lw.pyc
+# telnet made not for connection to telnet server but to all tcp etc. connections
+########
+
+import socket
+
+#socket.socket(socket.AF_INET,socket.SOCK_STREAM,0)
+
+socket.socket()
+
+s.bind(("",3333))
+
+# t see ports netstat -tlnp
+
+s.listen(5) // port listen krega 5 is 5 tk error check krega phir discard kr dega
+raw_input()
+
+x=s.accept() // record info about client .. raw input ki tarah ruka bhi rahega .. it will wait for a connection to be connect and then goes on 
+
+print x --- it also give a object for client with i...future me agar kisi ko kuch send krna ho
+
+
+while True:
+
+c,addr=s.accept()
+c.send("hi")
+print c.recv(10)
+c.close()
+
+ #telnet 192.168.43.80 3333
+
+
+but make it interactive
+  
+
+while True:
+
+c,addr=s.accept()
+c.send("login:")
+user=c.recv(100)  #vimal\n is recived so strip() must be used
+
+c.send("login:")
+print c.recv(10)
+passwd=c.recv(100)
+
+if user.strip() == "vimal" and passwd.strip() == "lw":
+	c.send("[root@server ~]#")
+	cmd=c.recv(100)
+	acmd=cmd.strip()
+	if acmd=="exit":
+	  c.close()
+	else:
+	  out=commands.getstatusoutput(acmd)[1]
+	  c.send(out+ "\n")
+	
+else
+	
+
+c.close()
+
+**********Do something like we give >>> as python and run it in our pc -------- paas
+
+
+
+ but to accept from multiple clients the threads must be initilised
+ put thread in while loop
+
+def myc(c)
+ code above
+
+c,addr=s.accept()
+thread.start_new_thread(myc ,(c)) //// dynamic thread start multiple logins now accept ... make dynamic threads
+
+
+// but whwn tcp is connected the port listen for few minutes so port is changed each time
+
+// write s.setsockopt(---------) **tcp resueaddress --google it -- will unuse the port address
+
+
+
+
+
+
+
+
+
+
+
+

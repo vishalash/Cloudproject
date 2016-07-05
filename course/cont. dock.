@@ -1,0 +1,126 @@
+	
+	Conatiners
+     ****************
+
+
+  Dockers
+ =========
+
+	
+  samsung -- knox (docker like)
+
+Docker is a company based on conatiners technology.
+
+	install docker-io or engine
+
+systemctl restart docker
+
+when we install a os then hm jha se boot krte hai use image bolte hai.
+
+same in containers when we start vm ... jo layer jiske upar os start honge use docker engine or service or deamon bolenge like hyperviser.
+
+as we had hdd in virtulisation called image same in dockers it is called image.
+
+as we must have image to launch os same in docker we need an image.
+
+
+	but in the world of docker the os is called #container.
+
+
+to bring os images go to internet and download
+
+	docker search ubuntu
+we can make own image  -- get account on dockers
+docker pull
+docker save -o ubuntu.tar
+
+docker run -i -t ubuntu   > install boot and then login with a id
+
+exit to close
+
+
+	people belive that their data is loss after they exit but this is myth as they do docker run.. but it start new os
+	but this is due to they run new os , their data is save by just power on that os.
+ docker ps -a(all)
+
+
+docker start ID
+
+docker start attach(attach cmd) ff337b38459f
+
+docker stop id -- to stop from linux command prompt
+
+but id is hard to remember it also give it a nick name
+
+khud ka naam bhi de skte hai
+
+docker run -it --name web1 ubuntu
+
+
+ ctrl +p +q exit from container but not off.
+
+
+docker rm ID -- to terminate conatiner permanently  //  chalte hue os ko terminate nhi kr skte phir bhi krna ho to (-f) lgao.
+
+for(i=0;i<10;i++)
+do
+docker run -i -t ubuntu /but this will enter first docker.. but docker gave an option to run container in background.
+done
+
+i=interactive
+t=terminal
+
+
+for(i=0;i<10;i++)
+do
+docker run -i -t -d --name-lw$i(for unique name) ubuntu (d=demonised)
+done
+
+docker attach lw2
+
+docker ps -a -q
+
+echo $(date)
+
+**docker rm -f $(docker ps -a -q) // to remove all containers
+
+own image
+*********
+
+docker commit my1 myvimal
+
+we can also upload to docker hub.
+
+docker search vimal13
+
+
+
+paas can be implemented using conatiners
+
+
+docker and rockets
+
+
+docker run -it myvimal date  // start run off
+docker inspect harry
+
+
+docker rmi myvimal
+
+
+
+**docker--core os
+**redhat-- fedora atomic
+
+
+
+
+
+
+
+
+
+
+
+
+

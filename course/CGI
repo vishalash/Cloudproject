@@ -1,0 +1,140 @@
+		
+
+								PYTHON CGI
+                                                      ***********************************
+
+	For raw_input()
+client must come to program
+
+in socket prgramming client ghar se input de paega but we have to give a program to client and that may be not acceptable by the client.
+
+
+
+		But every one knows to use browser and each machine has the  browser.
+
+	we just need to give a form to client and recive inputs given by client.
+ 
+	this facility is not CGI, but will be user friendly.
+
+But CGI concept is needed to implement this whole Technology.
+
+	
+
+
+                  We will make a web server which will be a interface between website and python program.
+
+                       Python program---------------Webserver(CGI or Gateway)---------------Website
+
+	Webserver can talk to any language.
+We will use python.
+
+	we wo't use raw_input as it take input from local keyboard and also we won't use socket as it take from network.
+
+	We will use Form field as it talk to web server.
+
+ first make a web server.
+
+
+ make a form in var / www/  html
+
+when we give input the variable must go somewhere.
+that variable is gone to some page. By default the variable is gone to same page by which the input is given.
+
+	This work is done by HTML page.
+
+<form action='my.py'>  // redirect to my.py
+Name <input type='text' name='x'>
+<input type='submit'>
+</form>
+
+  jb webserver python program ke paas aaega then code will be displayed ... now we have to run the program not just display.
+
+	html,css ,javascript are Client side language. -- the whole webite code is send to client and source code can be read by client...run on client side.
+
+	We want to run python program on server side as we don't want to giv epython code to client.
+
+	put python progs to  cd  /var/www/cgi-bin/
+
+vim lw.py
+
+	chmod +x lw.py
+
+	./lw.py
+IP/cgi-bin/my.py	
+
+Internal server error -- python prog to run hua but data is binary and website can't show it.
+
+	OSI presentation layer mim type(content type) can change the data comeing to wire .
+when data come to web browser it changes to text/ html content type.
+	
+	wen we access index.html it is written in webserver coding it will add header content-type:text/html can be captured by wireshark.
+
+curl -I http://website
+
+  We must manuaaly add content type:text/html
+
+
+print "content-type:text/html\n"
+
+In form gove path to python program.
+
+let we take x as input variable.
+
+
+**python kuch bhoi beje web browser use html ki tarah samjega
+print <b> hi </b>
+
+hi bold me print hoga
+
+		** but sare commands nahi chalegi as security will block it
+
+
+As default user is apache user which has a limited privilage
+
+But if we give root privilage to apache the apache server will not start as security issues will arise.
+
+	vim /etc/sudoers
+
+apache ALL=(ALL) NOPASSWD:ALL
+
+tty -command prompt 
+
+ye only allow to run on command prompt
+
+Defaults requiretty comment it 
+
+But password will be shown to all in URL
+use post meathod to hide url
+
+if wrong password
+print "location: http://site" remove new line and add new line above
+
+
+ client ki saare info server ke paas aati hai
+cip=print os.environ['REMOTE_ADDR']
+print "you are" + cip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

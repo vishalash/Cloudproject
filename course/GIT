@@ -1,0 +1,74 @@
+
+ SCM (source code management)
+
+centralised system of source code(SVN -- subversions(apache))
+
+i) SVN
+2) CVS
+
+Distributed
+
+LINUX TORWALDS
+***************
+
+Linux:  (GIT)  get in touch
+
+==========================
+
+ GITHUB / Bit Bucket
+
+mkdir /mycode
+
+git add abc.py
+or got add .
+git status
+
+  aj ka kaam khatam-- the commit (track the changes)
+  snapshot (track)
+
+git clone /mycode newcode
+
+	git clone root@192.168.2.162:/mycode  /root/Desktop/code1
+ got log
+
+git config --user.email
+
+
+
+git config --list
+
+
+git clone https://github.com/vishalash/folder  or repository
+
+git checkout -b tech    --new branch tech created
+
+git checkout mater  -- switch master branch
+
+
+
+	 ***********change branch can change folder in real time  --- ips can also be used to change
+		os can be changed in real time by chnging folder content
+
+
+ git remote add origin https://github.com/vishalash/repo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

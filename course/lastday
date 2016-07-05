@@ -1,0 +1,60 @@
+we don't install os each time.
+
+
+we just clone qcow2 or .img files
+also we change resources at live.
+
+#virt-install --import   --name rhel7 --ram 2048 --vcpu 1 --disk path=/var/lib/libvirt/images/rhel7.qcow2
+
+#fallocate -l 5G hdd.txt
+
+ln rhel7.qcow2 /root/Desktop/myos.qcow2
+
+
+
+share qcow2 image with nfs to target os
+
+etc/exports--
+
+/var/,,/images *(rw)
+
+restart nfs-server
+restart rpcbind
+
+
+in amazon instead of live migration == autoscaling
+
+
+#virsh migrate --live rhel7
+
+  qwmu+ssh://ip/system
+
+#grep vmx /proc/cpuinfo
+
+cd /etc/libvirt/qemu/
+ls
+cd /networks
+
+
+
+thin lvm==
+
+make pv vg
+
+LVPooL:
+	same size as VG:
+LVcreate  :  size 200GB / any size
+
+lvcreate --name pool1 --size 5000M --thin lwvg
+
+lvcreate -V3T --name lv1 --thin lwvg/pool1r
+
+
+
+
+
+
+
+
+
+

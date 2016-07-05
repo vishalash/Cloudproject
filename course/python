@@ -1,0 +1,182 @@
+ftp://192.168.0.254/pub/Linuxworld-Extra/sharwan
+
+
+control ctrl+c:-
+
+	as linux send some signals when we press ctrl+c,we can control it
+	ctrl+c=2
+
+import signal
+
+def lw(x,y):
+	print "ok bye"
+
+signal.signal(2,  lw)
+
+x=raw_input("Enter tou data")
+print x
+*********************************************************************************
+Multithreading:
+
+def a():
+	while True:
+		print "aaaaaaaaaaaaaaaaaa"
+
+def b():
+	while True:
+		print "bbbbbbbbbbbbbbbbbbbb"
+
+a()
+b()
+
+Now b will never run
+But how to run both-----
+	We have to use Multithreding
+
+{program}---------{ram--process (1 2 3 ...)}-----{CPU~core}
+#lscpu
+if we have one cpu them one statement is run at one ime.
+Every programming language is a single threaded language.
+CPU switches between different threads.
+
+	When a process start a pid is given.
+
+** when a pid is give a Folder is made on RAM**
+
+to make above program multithreaded--
+
+
+import thread
+def a():
+	while True:
+		print "aaaaaaaaaaaaaaaaaa"
+
+def b():
+	while True:
+		print "bbbbbbbbbbbbbbbbbbbb"
+
+
+thread.start_new_thread( a,(arguments) )
+thread.start_new_thread( b,())-----------total 4 threads, 1 is main thread and these 3 threads
+thread.start_new_thread()
+
+raw_input()    
+
+C group--- we can control that firefox to run on single specific core**
+
+	We must apply multithreading when we run two process
+#ps aur | grep python
+****************************************************************************************************************
+
+  File Handling--
+if we store a file my.txt
+
+then the whole strings in it is stored in a variable named my.txt
+and whole string is stored in a single line.
+**all text editors change the line when it get a \n.
+
+
+
+fh=open("j.txt")
+
+fh is a itteration
+
+next(fh)--- first line
+
+each line is a itteration
+**to print whole string as stored in hdd
+fh.read()
+x.close()
+	**if we are reading a file,we need to tell the python the addess of file
+	 x=open("j.txt")
+>>> x.read(3)
+'hel' 
+first three char of text
+x.read(3)
+adress at 4
+x.read()
+add at 5
+goes on
+
+x.tell()
+tells the addess
+	 but if we have to go to a particular add.
+	 called seeking
+x.seek(0,0)
+at start
+
+x.seek(3,0)
+third position
+  	
+
+		seek(position.with respect to(0 from current)
+x.seek(-3,2)
+last pos.
+cat----only read
+cat > x.txt
+to overwrite
+
+
+cat>>y.txt append mode
+
+fh=open('j.txt', mode='r')   by default
+
+	for i in fh:
+		print i
+
+one line at a time
+
+
+fh.write("hi")
+these all are stored in ram cache
+we must close fh to write.
+
+y.write("hello\n") new line
+previous file content will be lost
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

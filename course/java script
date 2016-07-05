@@ -1,0 +1,61 @@
+#browser knows where the mouse is ..so we can make changes when mouse go to a place.
+
+                                           JAVA SCRIPT
+                                      **********************
+
+these senses are called events in java script
+
+javascript processer-- web browser
+
+java and java script are releated like car and carpet.
+
+written between 
+<script>
+
+only javascript codes
+
+</script>
+
+document.write("hello");
+alert("yo");
+line by line run
+
+
+any number of script can be written anywhere
+
+ using events--
+
+<p onclick="lw()">vishal ash</p>
+
+alert box
+confirm box --
+control on a tag but if apply onclick then still load next page
+
+prompt box   x=prompt("welcome");
+
+
+   Own a tag(anchor tag)
+  *************************
+when we click a tag the it changes the upper box where url is written.
+
+y=document.loaction;
+alert(y);
+link
+
+now if we write document.location="http...google.com";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
