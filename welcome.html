@@ -1,11 +1,24 @@
 <style>
+div.out
+{
+//border: 2px groove navy;
+width:100%;
+left:0px;
+top:0px;
+z-index:4;
+height:40px;
+position:fixed;
+background: url('index.jpg');
+}
+
+
 div.top
 {
 text-align:center;
 height:100px;
 width:100%;
 position:absolute;
-top:0px;
+top:40px;
 left:0px;
 right:0px;
 }
@@ -102,6 +115,7 @@ height:95%;
 <a class='bmenu' href='object.html' target="myi">object</a>
 <a class='bmenu' href='block.html' target="myi">Block</a>
 <a class='amenu'  href='iaas.html' target="myi">IaaS</a>
+<a class='amenu'  href='http://192.168.43.80:6002/vnc.html?host=192.168.43.80&port=6002' target="myi">Start</a>
 <a class='amenu' href=''>CaaS</a>
 </div>
 
@@ -110,6 +124,19 @@ height:95%;
 		</iframe>
 
 </div>
+<div class='out' align='right'>
+	
+<form action ="index.html">
+<table>
+<tr>
+<td>
+<input type='submit' value='Log Out'>
+</td>
+</tr>
+</table>
+</form>
+	</div>
+
 </font>
 </body>
 </html>

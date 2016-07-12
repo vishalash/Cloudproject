@@ -1,13 +1,18 @@
 #!/usr/bin/python
 import os,sys
 import cgi,commands
+import random
 import mysql.connector as mariadb
 
 print"content-type:text/html"
 print "\n"
 
+p=(random.randint(5900,8000))
+
+
 x=cgi.FieldStorage()
-name=x.getvalue('name')
+fname=x.getvalue('fname')
+lname=x.getvalue('lname')
 email=x.getvalue('email')
 password=x.getvalue('password')
 
@@ -17,7 +22,7 @@ mariadb_connection = mariadb.connect(user='root', password='ash12', database='fa
 cursor = mariadb_connection.cursor()
 
 try:
-  cursor.execute("INSERT INTO user (name,email,password) VALUES (%s,%s,%s)", (name,email,password))
+  cursor.execute("INSERT INTO user (port,fname,lname,email,password) VALUES (%s,%s,%s,%s,%s)", (p,fname,lname,email,password))
 except mariadb.Error as error:
   print("<!--ERROR: {} -->".format(error))
   
@@ -30,11 +35,11 @@ except mariadb.Error as error:
   sys.exit()
 mariadb_connection.commit()
 
-cursor.execute("SELECT name,email,password FROM user WHERE name=%s",(name,))
+cursor.execute("SELECT port,fname,lname,email,password FROM user WHERE email=%s",(email,))
 
 
-for name, email,password in cursor:
-    print("<!--name: {}, email: {} , password: {} -->").format(name,email,password)
+for port,fname,lname, email,password in cursor:
+    print("<!--port: {},fname: {},lname: {}, email: {} , password: {} -->").format(port,fname,lname,email,password)
     print """
 	<script>
 	alert("Your account is now created")

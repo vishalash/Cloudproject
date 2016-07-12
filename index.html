@@ -35,14 +35,14 @@ top:50px;
 padding:0px;
 
 height:100%;
-width:720px;
+width:730px;
 left:620;
 float:left;
 position:absolute;
 background: url('e.jpg');
 padding-left: 5px;
 //border-radius:10px;
-box-shadow: 10px 10px 10px grey;
+//box-shadow: 10px 10px 10px grey;
 }
 
 iframe.myi
@@ -61,8 +61,9 @@ width:620px;
 position:absolute;
 border-radius:0px 0px 10px 10px;
 background: url('e.jpg');
+color:white;
 font-weight:bold;
-opacity:0.7;
+opacity:0.6;
 text-align:center;
 }
 
@@ -72,20 +73,60 @@ background:Turquoise;
 height:100%;
 }
 
+input.in1
+{
+border: 1px groove white;
+background:cyan;
+color:navy;
+width: 200px;
+height: 40px;
+border-radius: 20px;
+transition: width 1s;
+}
+
+input.in1:focus
+{
+border: 5px ridge grey;
+background: lightseagreen;
+color:black;
+font-weight: bold;
+width: 300px;
+}
+
+
+input.in2
+{
+border: 1px groove white;
+background:navy;
+color:white;
+width: 50px;
+height: 40px;
+border-radius: 20px;
+transition: width 1s;
+}
+
+input.in2:focus
+{
+border: 5px ridge grey;
+background:red;
+color:white;
+font-weight: bold;
+width: 100px;
+}
 
 </style>
 
 <body>
 <div class='outer' align='right'>
 	
-<form action ="welcome.html"' method='GET'>
+<form action ="http://192.168.43.80/cgi-bin/login.py"' method='GET'>
 <table>
 <tr>
 <td>
 <b>Email</b>
 </td>
 <td>
-<input type='text' name='email' value='email'>
+<input type='text' name='email'  class='in1'>
 </td>
 <td>
 </td>
@@ -93,10 +134,10 @@ height:100%;
 <b>Password</b>
 </td>
 <td>
-<input type='password' name='password' value='password'>
+<input type='password' name='password'  class='in1'>
 </td>
 <td>
-<input type='submit' value='Log In'>
+<input type='submit' value='Log In' class='in2'>
 </td>
 </tr>
 </table>
@@ -107,7 +148,7 @@ height:100%;
 		<iframe class='myi' name='myi'>
 		</iframe>
 		<div class='right-bot'>
-		Welcome -- A cloud computing project by **Vishal Ash**
+		Welcome
 		</div>	
 	</div>
 </div>
@@ -119,22 +160,32 @@ height:100%;
 </font>
 <br/>
 <br/>
-<form action ="welcome.html"' method='GET'>
+<form action ="http://192.168.43.80/cgi-bin/signup.py" method='GET'>
 <table width="400px" height="170px">
 <tr>
 <td>
-<b>Name</b>
+<b>First Name</b>
 </td>
 <td>
-<input type='text' name='name' value='name'>
+<input type='text' name='fname'  class='in1'>
 </td>
 </tr>
+
+<tr>
+<td>
+<b>Last Name</b>
+</td>
+<td>
+<input type='text' name='lname'  class='in1'>
+</td>
+</tr>
+
 <tr>
 <td>
 <b>Email</b>
 </td>
 <td>
-<input type='text' name='email' value='passwd'>
+<input type='text' name='email'  class='in1'>
 </td>
 </tr>
 
@@ -143,7 +194,7 @@ height:100%;
 <b>Password</b>
 </td>
 <td>
-<input type='password' name='password' value='passwd'>
+<input type='password' name='password'  class='in1'>
 </td>
 </tr>
 
@@ -152,7 +203,7 @@ height:100%;
 
 </td>
 <td>
-<input type='submit' value='Create an account' background='blue'>
+<input type='submit' value='Create' background='blue'  class='in2'>
 </td>
 
 </tr>
