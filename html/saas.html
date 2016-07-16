@@ -1,0 +1,40 @@
+<style>
+img
+{
+border: 5px inset white;
+width:10%;
+height:40px;
+display: block;
+background:black;
+-moz-border-radius: 10px;
+border-radius: 10px 5px;
+box-shadow: 10px 10px 10px grey;
+}
+img:hover
+{
+
+color: grey;
+box-shadow: 10px 10px 10px black;
+width:20%;
+height:60px;
+transition:width 1s;
+}
+</style>
+
+<font size=5>
+
+<pre>
+  <form action ="http://192.168.43.80/cgi-bin/saas/firefox.py"' method='GET'>
+  Enter the code-
+        <input type=text name='port'>
+	<input type="radio" name="saas" value="firefox"  checked>Firefox<br>
+        <input type="radio" name="saas" value="cheese" >Cheese<br>
+        <input type="radio" name="saas" value="calculator" > Calculator<br>
+        <input type="radio" name="saas" value="gnome-terminal" >terminal<br>
+        <input type=submit value="Start">
+  </form>
+</pre>
+</font>
+
+
+
