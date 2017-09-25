@@ -51,3 +51,5 @@ else:
 mariadb_connection.close()
 
 
+
+
